@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Auth</h1>
+
+  <ion-list>
+      
+      <ion-item>
+        <ion-label>Município</ion-label>
+        <ion-select id="idSelectTelaInicial" class="selectCustom" (ionChange)="persisteSelectTelaInicial($event)">
+          <ion-option *ngFor="let key of novoArray">{{key.nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input [(ngModel)] = "usercreds.name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input [(ngModel)] = "usercreds.password" type="password"></ion-input>
+      </ion-item>
+  </ion-list>
+  <button ion-button (click)="login(usercreds)">Login</button>
+  <button ion-button >Signup</button>
+
+  <div id="demo"></div>
+</ion-content>
